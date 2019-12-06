@@ -35,8 +35,15 @@ function randomizeHappy() {
 }
 
 function displaySillyMessage() {
+  var currentMessage = message.innerText;
   var randomMessage = randomizeSilly();
-  message.innerText = randomMessage;
+  if (currentMessage === randomMessage) {
+    console.log('message was the same, retrying');
+    displaySillyMessage();
+  } else {
+    console.log('message was good!');
+    message.innerText = randomMessage;
+  }
 }
 
 function randomizeSilly() {
@@ -54,8 +61,15 @@ function randomizeSilly() {
 }
 
 function displaySadMessage() {
+  var currentMessage = message.innerText;
   var randomMessage = randomizeSad();
-  message.innerText = randomMessage;
+  if (currentMessage === randomMessage) {
+    console.log('message was the same, retrying');
+    displaySadMessage();
+  } else {
+    console.log('message was good!');
+    message.innerText = randomMessage;
+  }
 }
 
 function randomizeSad() {
