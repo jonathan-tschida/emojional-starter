@@ -9,16 +9,21 @@ sadButton.addEventListener('click', displaySadMessage);
 
 
 function displayHappyMessage() {
+  var randomMessage = randomizeHappy();
+  message.innerText = randomMessage;
+}
+
+function randomizeHappy() {
   var happy1 = "You go!";
   var happy2 = "Your smile just cheered me up.";
   var happy3 = "YAY!";
   var randomized = Math.floor(Math.random() * 3) + 1;
   if (randomized === 1) {
-    message.innerText = happy1;
+    return happy1;
   } if (randomized === 2) {
-    message.innerText = happy2;
+    return happy2;
   } if (randomized === 3) {
-    message.innerText = happy3;
+    return happy3;
   }
 }
 
