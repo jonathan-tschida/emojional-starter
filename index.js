@@ -9,8 +9,15 @@ sadButton.addEventListener('click', displaySadMessage);
 
 
 function displayHappyMessage() {
+  var currentMessage = message.innerText;
   var randomMessage = randomizeHappy();
-  message.innerText = randomMessage;
+  if (currentMessage === randomMessage) {
+    console.log('message was the same, retrying');
+    displayHappyMessage();
+  } else {
+    console.log('message was good!');
+    message.innerText = randomMessage;
+  }
 }
 
 function randomizeHappy() {
