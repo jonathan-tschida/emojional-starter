@@ -28,32 +28,42 @@ function randomizeHappy() {
 }
 
 function displaySillyMessage() {
+  var randomMessage = randomizeSilly();
+  message.innerText = randomMessage;
+}
+
+function randomizeSilly() {
   var silly1 = "Interesting response.";
   var silly2 = "Sounds...good?";
   var silly3 = "Me too.";
   var randomized = Math.floor(Math.random() * 3) + 1;
   if (randomized === 1) {
-    message.innerText = silly1;
+    return silly1;
   } if (randomized === 2) {
-    message.innerText = silly2;
+    return silly2;
   } if (randomized === 3) {
-    message.innerText = silly3;
+    return silly3;
   }
 }
 
 function displaySadMessage() {
+  var randomMessage = randomizeSad();
+  message.innerText = randomMessage;
+}
+
+function randomizeSad() {
   var sad1 = "Do you want to talk?";
   var sad2 = "Keep your head up!";
   var sad3 = "We can cry together!";
   var sad4 = "What can I do?";
   var randomized = Math.floor(Math.random() * 4) + 1;
   if (randomized === 1) {
-    message.innerText = sad1;
+    return sad1;
   } if (randomized === 2) {
-    message.innerText = sad2;
+    return sad2;
   } if (randomized === 3) {
-    message.innerText = sad3;
+    return sad3;
   } if (randomized === 4) {
-    message.innerText = sad4;
+    return sad4;
   }
 }
